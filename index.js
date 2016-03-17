@@ -20,8 +20,7 @@ function reveal (content, option, callback) {
     slides = slides.concat('\n<section' + state + '>\n' + slide + '\n</section>\n')
   })
   view.slides = slides
-  var template = fs.readFileSync(__dirname + '/template.mustache', 'utf8')
-  var data = mustache.to_html(template, view)
+  var data = slides
   callback(null, data)
 }
 
